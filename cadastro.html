@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+    <nav>
+    <ul>
+        <li>
+            <a href="index.html">Início</a>
+            <a href="palestra.html">Palestra</a>  
+            <a href="cadastro.html">Cadastro</a> 
+            <a href="contato.html">Contato</a>
+            <a href="mapa.html">Mapa</a>
+        </li>
+    </ul>
+    <form action="cadastro.php" method="post">
+        <h1>Cadastro de participante</h1>
+
+        <label for="nome">Nome do palestrante:</label>
+        <input type="text" name="nome" required><br><br>
+
+        <label for="nome">Idade:</label>
+        <input type="text" name="idade" required><br><br>
+
+        <label for="nome">Telefone:</label>
+        <input type="text" name="telefone" required><br><br>
+
+        <label for="nome">Palestras:</label>
+        <select name="palestra">
+            <option value="palestra1">O Futuro das Profissões: Carreiras em Transformação</option>
+            <option value="palestra2">Segurança Digital: Protegendo seus Dados na Era da Informação</option>
+            <option value="palestra3">Robótica Educacional: Aprendizado e Criatividade com Tecnologia</option>
+        </select><br><br>
+
+        <label>Você é:</label><br>
+      <input type="radio" name="selecao" value="aluno" onclick="mostrarCampo(this.value)"> Aluno<br>
+      <input type="radio" name="selecao" value="responsavel" onclick="mostrarCampo(this.value)"> Pai ou Mãe/Responsável<br><br>
+
+      <div id="campo-ra">
+        <label for="ra">RA do aluno:</label><br>
+        <input type="text" name="ra"><br><br>
+      </div>
+
+      <div id="campo-cpf">
+        <label for="cpf">CPF do responsável:</label><br>
+        <input type="text" name="cpf"><br><br>
+      </div>
+
+      <button type="submit">Enviar</button>
+     </div>
+    
+    </form>
+    <script>
+    function mostrarCampo(valor) {
+      const campoRa = document.getElementById('campo-ra');
+      const campoCpf = document.getElementById('campo-cpf');
+
+      if (valor === 'aluno') {
+        campoRa.style.display = 'block';
+        campoCpf.style.display = 'none';
+      } else if (valor === 'responsavel') {
+        campoRa.style.display = 'none';
+        campoCpf.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
